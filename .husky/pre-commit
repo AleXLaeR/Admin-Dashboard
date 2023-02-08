@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Lint client project
+cd client && npm run lint
+husky_check_status
+
+# Lint server project
+cd ../server && npm run lint
+husky_check_status
+
+echo "All linting checks passed."
