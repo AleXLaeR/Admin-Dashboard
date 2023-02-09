@@ -8,7 +8,7 @@ then
   exit 1
 fi
 npm run lint:fix
-echo "Client lint successful"
+echo "Client lint:fix successful"
 
 # Lint the second project
 if ! cd ../server;
@@ -17,5 +17,5 @@ then
   exit 1
 fi
 npm run lint:fix
-echo "Server lint successful"
+echo "Server lint:fix successful"
 
