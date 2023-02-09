@@ -7,22 +7,25 @@
     "outDir": "dist",
     "rootDir": ".",
     "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ],
+      "@routes/*": [
+        "src/routes/*"
+      ]
+    },
     "removeComments": true,
     "strict": true,
     "noImplicitAny": true,
-    "paths": {
-      "@src": [
-        "src/*"
-      ]
-    },
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules",
     "dist"
-  ],
-  "include": [
-    "src/**/*.ts"
   ]
 }
