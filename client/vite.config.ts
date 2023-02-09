@@ -10,6 +10,7 @@ export default defineConfig({
       '@src': path.resolve(__dirname, './src'),
       '@@assets': path.resolve(__dirname, './src/assets'),
       '@redux': path.resolve(__dirname, './src/redux'),
+      '@features': path.resolve(__dirname, './src/features'),
     },
   },
   server: {

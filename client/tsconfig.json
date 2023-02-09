@@ -25,6 +25,9 @@
       ],
       "@redux/*": [
         "src/redux/*"
+      ],
+      "@features/*": [
+        "src/features/*"
       ]
     }
   },

@@ -1,6 +1,8 @@
 import { CssBaseline, ThemeProvider, ThemeOptions } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
+
 import { useMemo } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import { useAppSelector } from '@redux/hooks';
 import { selectTheme } from '@redux/slices/theme.slice';
@@ -14,7 +16,7 @@ export default function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <p>sdgdfgsdf</p>
+        <Outlet />
       </ThemeProvider>
     </div>
   );
