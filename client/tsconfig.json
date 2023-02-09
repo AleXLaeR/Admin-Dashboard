@@ -14,8 +14,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@redux/*": [
+        "src/redux/*"
+      ]
+    }
   },
-  "include": ["src"],
+  "include": ["src",
+    "src/typings.ts"
+  ],
   "references": [{ "path": "./tsconfig.vite.json"}]
 }
