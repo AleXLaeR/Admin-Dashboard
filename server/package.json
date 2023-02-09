@@ -6,7 +6,7 @@
     "build": "npx tsc -p .",
     "start:dev": "nodemon",
     "start:prod": "node ./dist/app.js",
-    "lint": "eslint --ext \".js,.ts,.tsx,.json\" .",
+    "lint": "eslint --ext \".js,.ts,.md\" .",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install"
   },

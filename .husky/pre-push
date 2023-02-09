@@ -7,7 +7,7 @@ then
   echo "$1 failed with exit code $?"
   exit 1
 fi
-npm run lint
+npm run lint:fix
 echo "Client lint successful"
 
 # Lint the second project
@@ -16,6 +16,6 @@ then
   echo "$1 failed with exit code $?"
   exit 1
 fi
-npm run lint
+npm run lint:fix
 echo "Server lint successful"
 
