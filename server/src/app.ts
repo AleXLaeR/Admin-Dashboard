@@ -48,7 +48,8 @@ mongoose
       console.log(`App listening on port ${PORT}`);
     });
 
-    await User.insertMany(dataUser);
+    /* ONLY INSERT MOCKS ONCE TO AVOID DUPLICATING THE DATA */
+    // await User.insertMany(dataUser);
   })
   .catch((error) => {
     console.log(`There was an error establishing mongodb connection: ${error}`);

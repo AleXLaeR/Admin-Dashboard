@@ -4,7 +4,7 @@ import { AppUser } from '@src/typings';
 const adminApi = createApi({
   reducerPath: 'adminApi',
   tagTypes: ['User'],
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
   endpoints: (builder) => ({
     getUser: builder.query<AppUser, string>({
       query: (id: string) => `/user/${id}`,
