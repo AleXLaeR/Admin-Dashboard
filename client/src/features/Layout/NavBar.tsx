@@ -8,8 +8,8 @@ import {
 import ProfileImage from '@assets/profile-image.jpg';
 
 import { useAppDispatch } from '@redux/hooks';
-import { toggle } from '@redux/slices/theme.slice';
-import { AppBar, Box, IconButton, InputBase, Toolbar, useTheme } from '@mui/material';
+import { toggleTheme } from '@redux/slices/global.slice';
+import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material';
 import { setModal } from '@redux/slices/modal.slice';
 import FlexBetween from '@common/components/FlexBetween';
 
@@ -18,7 +18,7 @@ export default function NavBar() {
   const { palette } = useTheme();
 
   const onThemeSwitcherClick = () => {
-    dispatch(toggle);
+    dispatch(toggleTheme());
   };
 
   const onDrawerMenuClick = () => {

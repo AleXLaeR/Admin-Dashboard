@@ -2,10 +2,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
-import thunk from 'redux-thunk';
 
-import themeReducer from './slices/theme.slice';
-import modalReducer from './slices/modal.slice';
+import thunk from 'redux-thunk';
+import { globalReducer, modalReducer } from '@redux/slices';
 
 const persistConfig = {
   key: 'root',
@@ -14,7 +13,7 @@ const persistConfig = {
 
 export const store = configureStore({
   reducer: {
-    theme: persistReducer(persistConfig, themeReducer),
+    global: persistReducer(persistConfig, globalReducer),
     modal: modalReducer,
   },
   middleware: [thunk],
