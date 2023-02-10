@@ -6,6 +6,11 @@ import morgan from 'morgan';
 import cors from 'cors';
 import * as mongoose from 'mongoose';
 
+/* DATA MOCKING */
+import { dataUser } from '@src/data';
+import User from '@models/user.model';
+/* ------------ */
+
 import {
   baseRoutes,
   clientRoutes,
@@ -38,10 +43,12 @@ const PORT = process.env.PORT || 8080;
 mongoose.set('strictQuery', true);
 mongoose
   .connect(process.env.MONGODB_URL!)
-  .then(() => {
+  .then(async () => {
     app.listen(PORT, () => {
       console.log(`App listening on port ${PORT}`);
     });
+
+    await User.insertMany(dataUser);
   })
   .catch((error) => {
     console.log(`There was an error establishing mongodb connection: ${error}`);
