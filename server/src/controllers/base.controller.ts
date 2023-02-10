@@ -4,13 +4,13 @@ import { StatusCodes } from 'http-status-codes';
 import User from '@models/user.model';
 
 // eslint-disable-next-line import/prefer-default-export
-export const getUser = async (req: Request, res: Response) => {
+export const getUser = async ({ params }: Request, res: Response) => {
   try {
-    const { id } = req.params as { id: string };
+    const { id } = params;
     const user = await User.findById(id);
 
-    res.send(StatusCodes.OK).json(user);
-  } catch (error: unknown) {
+    res.status(StatusCodes.OK).json(user);
+  } catch (error: any) {
     res.sendStatus(StatusCodes.BAD_REQUEST);
   }
 };
