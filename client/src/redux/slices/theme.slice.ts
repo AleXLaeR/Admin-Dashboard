@@ -1,14 +1,9 @@
-import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { Theme } from '../../typings';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { RootState } from '@redux/store';
+import { Theme } from '@src/typings';
 
-type ThemeState = {
-  mode: Theme;
-};
-
-const initialState: ThemeState = {
-  mode: 'dark',
-};
+type ThemeState = { mode: Theme };
+const initialState: ThemeState = { mode: 'dark' };
 
 const { actions, reducer } = createSlice({
   name: 'theme',
@@ -17,16 +12,13 @@ const { actions, reducer } = createSlice({
     toggle: (state, _) => {
       state.mode = state.mode === 'dark' ? 'light' : 'dark';
     },
-    setMode: (state, { payload }: PayloadAction<Theme>) => {
-      state.mode = payload;
-    },
   },
 });
-export const { toggle, setMode } = actions;
+export const { toggle } = actions;
 
 export const selectTheme = createSelector(
-  ({ theme }: RootState) => theme.mode,
-  (mode) => mode,
+  (state: RootState) => state.theme,
+  (theme) => theme,
 );
 
 export default reducer;
