@@ -1,8 +1,17 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+
+import {
+  getGeography,
+  getCustomers,
+  getTransactions,
+  getProducts,
+} from '@controllers/client.controller';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  return res.send('Hello!');
-});
+router.get('/products', getProducts);
+router.get('/customers', getCustomers);
+router.get('/transactions', getTransactions);
+router.get('/geography', getGeography);
+
 export default router;

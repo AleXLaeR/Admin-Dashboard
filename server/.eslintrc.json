@@ -26,6 +26,7 @@
   "rules": {
     "import/extensions": 0,
     "no-console": 0,
+    "no-underscore-dangle": 0,
     "@typescript-eslint/no-unused-vars": "warn",
     "import/no-extraneous-dependencies": 0,
     "import/order": [

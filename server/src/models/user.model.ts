@@ -67,6 +67,11 @@ const UserSchema = new mongoose.Schema<UserModel>(
       type: Array,
       required: false,
     },
+    phoneNumber: {
+      type: 'string',
+      required: false,
+      default: null,
+    },
   },
   { timestamps: true },
 );

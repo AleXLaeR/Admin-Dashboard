@@ -19,6 +19,9 @@
       ],
       "@models/*": [
         "src/models/*"
+      ],
+      "@services/*": [
+        "src/services/*"
       ]
     },
     "removeComments": true,
